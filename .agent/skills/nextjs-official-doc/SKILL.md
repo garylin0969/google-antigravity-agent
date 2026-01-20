@@ -1,6 +1,6 @@
 ---
 name: nextjs-sitemap-expert
-description: 專用於 Next.js 開發。強制透過分析 https://nextjs.org/sitemap.xml 來定位官方文件，確保引用內容的絕對精確性。
+description: 專用於 Next.js 開發。強制透過分析 https://nextjs.org/sitemap.xml 來定位官方文件，確保開發的精確性。
 ---
 
 # Next.js Sitemap 檢索專家

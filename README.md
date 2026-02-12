@@ -11,9 +11,9 @@
 
 ---
 
-## � 目錄
+## 📋 目錄
 
-- [�🚀 Rules (規則)](#-rules-規則)
+- [🚀 Rules (規則)](#-rules-規則)
     - [什麼是 Rule？](#什麼是-rule)
     - [檔案位置](#1-檔案位置-必填)
     - [檔案格式規範](#2-檔案格式規範)
@@ -212,12 +212,16 @@ Markdown 內文必須包含明確的執行步驟，告訴 Agent「拿到這個�
 
 ### Rules 範例
 
-| 檔案                                     | 說明                                              |
-| :--------------------------------------- | :------------------------------------------------ |
-| `.agent/rules/atomic-design-gen.md`      | 強制執行 Atomic Design 元件架構                   |
-| `.agent/rules/google-style-comments.md`  | 強制為程式碼添加 Google Style 繁體中文 JSDoc 註解 |
-| `.agent/rules/kebab-naming-enforcer.md`  | 強制檔案與資料夾使用 kebab-case 命名              |
-| `.agent/rules/server-component-first.md` | Next.js App Router 的 Server Component 優先策略   |
+本專案的 Rules 以**英文撰寫**（方便 AI 編輯器理解），並在 `中文版/` 資料夾提供對應的繁體中文版本。
+
+| 檔案                         | 說明                                                                  |
+| :--------------------------- | :-------------------------------------------------------------------- |
+| `coding-standards.md`        | 核心開發理念、工作流程、語法風格、無障礙、TypeScript 最佳實踐         |
+| `reactjs-nextjs-patterns.md` | React.js 最佳實踐、Next.js App Router 慣例、Server Component 優先策略 |
+| `component-structure.md`     | Atomic Design 元件架構與檔案組成規範                                  |
+| `file-naming-convention.md`  | 全域 kebab-case 檔案命名規範                                          |
+| `jsdoc-convention.md`        | Google Style 繁體中文 JSDoc 註解標準                                  |
+| `ui-styling-guide.md`        | Tailwind CSS + Shadcn UI + Radix UI + 表單驗證                        |
 
 ### Skills 範例
 
@@ -308,14 +312,28 @@ description: 當使用者詢問 XXX 時啟動，用於 YYY。
 
 ```
 .agent/
-├── rules/                              # 📋 規則目錄
-│   ├── atomic-design-gen.md
-│   ├── google-style-comments.md
-│   ├── kebab-naming-enforcer.md
-│   └── server-component-first.md
-└── skills/                             # 🧰 技能目錄
+├── rules/                                  # 📋 規則目錄（英文版 - 給 AI 編輯器）
+│   ├── coding-standards.md                 # 編碼標準
+│   ├── reactjs-nextjs-patterns.md          # React.js & Next.js 開發模式
+│   ├── component-structure.md              # 元件結構（Atomic Design）
+│   ├── file-naming-convention.md           # 檔案命名規範
+│   ├── jsdoc-convention.md                 # JSDoc 註解規範
+│   └── ui-styling-guide.md                 # UI 與樣式指南
+└── skills/                                 # 🧰 技能目錄
     └── nextjs-docs-lookup/
-        └── SKILL.md                    # 技能定義檔
+        └── SKILL.md                        # Next.js 文件檢索技能
+
+中文版/
+├── rules/                                  # 📋 規則目錄（繁體中文版）
+│   ├── coding-standards.md
+│   ├── reactjs-nextjs-patterns.md
+│   ├── component-structure.md
+│   ├── file-naming-convention.md
+│   ├── jsdoc-convention.md
+│   └── ui-styling-guide.md
+└── skills/
+    └── nextjs-docs-lookup/
+        └── SKILL.md
 ```
 
 ---

@@ -1,70 +1,70 @@
 ---
 name: nextjs-docs-lookup
-description: 當回答 Next.js 相關問題或撰寫 Next.js 程式碼時啟動。強制透過檢索 https://nextjs.org/sitemap.xml 定位官方文件，確保資訊精確。
+description: Activated when answering Next.js questions or writing Next.js code. Forces lookup via https://nextjs.org/sitemap.xml to locate official documentation, ensuring accuracy.
 ---
 
-# Next.js 官方文件檢索指南
+# Next.js Official Documentation Lookup Guide
 
-你正在一個 Next.js 專案中工作。為了確保資訊的**絕對正確性**，你必須遵循以下「檢索優先」的工作流程。
+You are working in a Next.js project. To ensure **absolute accuracy**, you must follow this "lookup-first" workflow.
 
-> 📚 **主要資源**：
+> 📚 **Primary Resources**:
 >
-> - Sitemap：`https://nextjs.org/sitemap.xml`
-> - 官方文件首頁：`https://nextjs.org/docs`
+> - Sitemap: `https://nextjs.org/sitemap.xml`
+> - Official Docs: `https://nextjs.org/docs`
 
 ---
 
-## 核心執行流程
+## Core Workflow
 
-收到使用者問題後，你「必須」依序執行以下步驟：
+After receiving a user question, you **must** execute the following steps in order:
 
-### 步驟一：Sitemap 路徑檢索
+### Step 1: Sitemap Path Lookup
 
-1. 檢索 `https://nextjs.org/sitemap.xml`
-2. 找出與使用者問題最相關的 `<loc>` 網址
-3. **優先篩選規則**：
-    - 優先選擇路徑包含 `/docs/app/` (App Router) 的網址
-    - 若問題明確指向 Pages Router，才選擇 `/docs/pages/` 路徑
-    - 若兩者都適用，優先回答 App Router
+1. Fetch `https://nextjs.org/sitemap.xml`
+2. Find the `<loc>` URLs most relevant to the user's question
+3. **Priority rules**:
+    - Prefer paths containing `/docs/app/` (App Router)
+    - Only choose `/docs/pages/` paths if the question explicitly targets Pages Router
+    - If both apply, prioritize App Router
 
-### 步驟二：讀取並提取
+### Step 2: Read & Extract
 
-1. 讀取步驟一找到的網址內容
-2. 尋找與問題相關的段落
-3. 標記出需要引用的官方定義或程式碼
+1. Read the URL content found in Step 1
+2. Locate paragraphs relevant to the question
+3. Mark official definitions or code that need to be cited
 
-### 步驟三：建構回答
+### Step 3: Construct Response
 
-根據讀取的內容進行回答，並遵守下方的「回答規範」。
+Respond based on the retrieved content following the "Response Rules" below.
 
 ---
 
-## 回答規範
+## Response Rules
 
-### 1. 絕對原文引用 (最高優先級)
+### 1. Exact Verbatim Quotes (Highest Priority)
 
-你必須將找到的官方定義視為「不可變動的字串」：
+You must treat official definitions as **immutable strings**:
 
-| 類型       | 格式                           | 要求                     |
-| ---------- | ------------------------------ | ------------------------ |
-| **文字**   | 使用 `>` 引用區塊              | 嚴禁修改標點、換行或單字 |
-| **程式碼** | 使用 Code Block + `typescript` | 保持原始格式             |
+| Type     | Format                        | Requirement                                      |
+| -------- | ----------------------------- | ------------------------------------------------ |
+| **Text** | Use `>` blockquote            | Do not modify punctuation, line breaks, or words |
+| **Code** | Use Code Block + `typescript` | Preserve original formatting                     |
 
-> **驗證標準**：使用者將你的引用文字複製貼上到該網頁搜尋，必須能找到 100% 匹配的段落。
+> **Verification Standard**: If the user copies your quoted text and searches on that page, they must find a 100% matching paragraph.
 
-### 2. 來源標註
+### 2. Source Attribution
 
-每次引用官方文件時，必須在回答中提供來源連結：
+Every time you cite official documentation, provide the source link in your response:
 
 ```
-> [官方文件說明內容...]
+> [Official documentation content...]
 >
-> 來源：[頁面標題](https://nextjs.org/docs/...)
+> Source: [Page Title](https://nextjs.org/docs/...)
 ```
 
-### 3. 範例程式碼規範
+### 3. Code Example Standards
 
-若需提供範例程式碼，必須使用 TypeScript 並加上 Google Style 繁體中文註解：
+If providing code examples, you must use TypeScript with Google Style Traditional Chinese JSDoc comments (refer to `jsdoc-convention` rule):
 
 ```typescript
 /**
@@ -80,29 +80,29 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
 
 ---
 
-## 失敗處理流程
+## Failure Handling
 
-當無法找到相關官方文件時：
+When no relevant official documentation can be found:
 
-### 情境 A：Sitemap 中找不到相關頁面
+### Scenario A: No Related Page in Sitemap
 
-1. 告知使用者：「在 Next.js 官方文件中未找到直接相關的資訊。」
-2. 提供最接近的替代頁面連結
-3. 基於一般 React/JavaScript 知識提供建議，但明確標註「這並非官方文件內容」
+1. Tell the user: "No directly relevant information was found in the Next.js official documentation."
+2. Provide links to the closest alternative pages
+3. Offer suggestions based on general React/JavaScript knowledge, but explicitly note "This is not from official documentation"
 
-### 情境 B：頁面存在但內容不足
+### Scenario B: Page Exists but Content Is Insufficient
 
-1. 引用現有內容
-2. 補充說明可能需要查閱的其他資源（如 GitHub Issues、RFC）
-3. 建議使用者查閱 Next.js GitHub 討論區
+1. Quote the available content
+2. Supplement with other resources that may need to be consulted (e.g., GitHub Issues, RFCs)
+3. Suggest the user check the Next.js GitHub Discussions
 
 ---
 
-## 常見問題類型與對應路徑
+## Common Question Types & Recommended Paths
 
-| 問題類型      | 建議優先檢索的路徑                                  |
+| Question Type | Recommended Lookup Path                             |
 | ------------- | --------------------------------------------------- |
-| Routing 路由  | `/docs/app/building-your-application/routing`       |
+| Routing       | `/docs/app/building-your-application/routing`       |
 | Data Fetching | `/docs/app/building-your-application/data-fetching` |
 | Rendering     | `/docs/app/building-your-application/rendering`     |
 | Caching       | `/docs/app/building-your-application/caching`       |

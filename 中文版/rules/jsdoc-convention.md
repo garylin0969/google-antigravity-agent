@@ -1,35 +1,35 @@
 ---
-name: google-style-comments
+name: jsdoc-convention
 description: 當撰寫、重構或解釋 TypeScript/JavaScript 程式碼時啟動。強制為所有導出的函式、類別、介面與元件添加 Google Style 的繁體中文 JSDoc 註解。
 ---
 
-# Google Style 程式碼註解規範 (繁體中文版)
+# JSDoc 註解規範（Google Style）
 
-為了確保程式碼的可讀性與 IDE 支援度，所有 Exported (導出) 的程式碼實體必須遵循 Google JavaScript Style Guide 的 JSDoc 規範。
+為了確保程式碼的可讀性與 IDE 支援度，所有 Exported（導出）的程式碼實體必須遵循 Google JavaScript Style Guide 的 JSDoc 規範。所有說明文字必須使用**繁體中文（台灣）**。
 
 > 📚 **官方參考**：[Google JavaScript Style Guide - JSDoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
 
-## 1. 核心原則 (Core Principles)
+## 1. 核心原則
 
-- **語言**：所有說明文字必須使用 **繁體中文** (台灣習慣用語)。
+- **語言**：所有說明文字必須使用**繁體中文**（台灣習慣用語）。
 - **格式**：必須使用 `/** ... */` 多行註解格式。
-- **時機**：在定義任何 `export` 的 Function, Component, Interface, Type, Class 之前，必須加上註解。
+- **時機**：在定義任何 `export` 的 Function、Component、Interface、Type、Class 之前，必須加上註解。
 
-## 2. 標籤規範 (Tag Standards)
+## 2. 標籤規範
 
 依照 Google Style，請使用以下標準標籤：
 
 | 標籤                  | 說明                                                      |
 | --------------------- | --------------------------------------------------------- |
 | `@param {Type} name`  | 說明參數的名稱、型別與用途。若參數為選填，請標註 `[name]` |
-| `@return {Type}`      | (或 `@returns`) 說明回傳值的型別與意義                    |
+| `@return {Type}`      | （或 `@returns`）說明回傳值的型別與意義                   |
 | `@throws {ErrorType}` | 說明函式可能拋出的錯誤類型與原因                          |
 | `@deprecated`         | 若該功能已過時，請說明原因與替代方案                      |
 | `@example`            | 提供程式碼使用範例                                        |
 
-## 3. 撰寫範例 (Examples)
+## 3. 撰寫範例
 
-### A. 函式與工具 (Functions & Utils)
+### A. 函式與工具
 
 註解第一行應為簡短的摘要，若有詳細說明請空一行再寫。
 
@@ -50,7 +50,7 @@ export const calculateTotal = (items: CartItem[], taxRate: number = 0.05, coupon
 };
 ```
 
-### B. React 元件 (Components)
+### B. React 元件
 
 必須清楚說明元件的職責以及 Props。
 
@@ -66,14 +66,13 @@ export const calculateTotal = (items: CartItem[], taxRate: number = 0.05, coupon
  * @param {string} props.name - 顯示名稱
  * @param {string} [props.avatarUrl] - (選填) 頭像圖片網址，若無則顯示預設圖
  * @param {() => void} [props.onClick] - (選填) 點擊卡片時的回呼函式
- * @return {JSX.Element} 渲染後的卡片 UI
  */
-export const UserProfileCard = ({ userId, name, avatarUrl, onClick }: UserProfileCardProps): JSX.Element => {
+export const UserProfileCard = ({ userId, name, avatarUrl, onClick }: UserProfileCardProps): => {
     // ...
 };
 ```
 
-### C. 介面與型別 (Interfaces & Types)
+### C. 介面與型別
 
 每個屬性上方都應有單行說明。
 
@@ -91,7 +90,7 @@ export interface ApiErrorResponse {
 }
 ```
 
-## 4. 執行檢查 (Execution Check)
+## 4. 執行檢查
 
 生成程式碼後，請檢查：
 

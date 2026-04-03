@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+name: file-naming-convention
 description: Activated when creating or modifying files. Enforces global kebab-case naming and file structure conventions.
 ---
 

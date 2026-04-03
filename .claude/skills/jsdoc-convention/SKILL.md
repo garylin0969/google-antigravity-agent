@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+name: jsdoc-convention
 description: Activated when writing, refactoring, or explaining TypeScript/JavaScript code. Enforces Google Style Traditional Chinese JSDoc comments on all exported functions, classes, interfaces, and components.
 ---
 

@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+name: reactjs-nextjs-patterns
 description: Activated when writing React components or Next.js pages. Enforces React best practices, Next.js App Router conventions, and the Server Component First strategy.
 ---
 

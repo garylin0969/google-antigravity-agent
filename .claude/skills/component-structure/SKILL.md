@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+name: component-structure
 description: Activated when creating components or UI blocks. Enforces Atomic Design architecture and specific file export conventions.
 ---
 
@@ -19,7 +19,7 @@ Place components according to their complexity level:
 
 ## 2. Naming Convention
 
-> **Note**: For file and directory naming rules, refer to the `file-naming-convention` rule.
+> **Note**: For file and directory naming rules, refer to the `file-naming-convention` skill.
 
 - **Directory names**: Strictly use **kebab-case** (e.g., `user-avatar`)
 - **File names**: Strictly use **kebab-case** (e.g., `user-avatar.tsx`)

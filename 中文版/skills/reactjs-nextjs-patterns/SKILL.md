@@ -1,5 +1,6 @@
 ---
-trigger: always_on
+name: reactjs-nextjs-patterns
+description: 當編寫 React 元件或 Next.js 頁面時啟用。強制執行 React 最佳實踐、Next.js App Router 慣例，以及伺服器元件優先（Server Component First）策略。
 ---
 
 # React.js 與 Next.js 開發模式
